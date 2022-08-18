@@ -1,0 +1,14 @@
+Create an Express.js project that will expose three endpoints:
+
+A GET endpoint to return a dummy object
+A POST endpoint that will get user input and return an object that will have the data passed
+A DELETE endpoint that will take an id parameter (something like users/{userid})
+All responses should return the correct response code. 
+Create a middleware that will be added everywhere. 
+The middleware should just print something in the console, no specific functionality is required.
+
+Out of scope:
+
+Authentication
+Persisting the data
+Typescript
