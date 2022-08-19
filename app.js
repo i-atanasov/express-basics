@@ -62,7 +62,7 @@ app.delete('/deleteMovie/:id', (req, res) => {
     
     if (movies.length === newMovies.length) {
         return res
-                .status(404)
+                .status(400)
                 .json({ success: false, msg: `no movie with id ${deletedMovieID}` })
     }
     return res.status(201).json(`<h3>Successfully deleted movie N:${deletedMovieID}.</h3>`)
