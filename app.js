@@ -37,11 +37,14 @@ app.get('/api/movie/:id', (req, res) => {
     return res.json(singleMovie)
 })
 
-//post req to do
 app.post('/newMovie', (req, res) => {
-    console.log(req.body)
-
+    let title = ''
+    if (req.body.title) { title = req.body.title }
+    else { return res.status(400).send("<h3>Please provide title.</h3></bg><a href='/'>Back</a>") }
+    let watched = req.body.watched ? true : false
+    const newMovies = [...movies, { id: movies[movies.length-1].id + 1, title: title, watched: watched}]
     res.status(201).send("<h3>added successfully</h3></bg><a href='/'>Back</a>")
+    console.log(newMovies)
 })
 
 //delete req to do
